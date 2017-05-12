@@ -3,7 +3,7 @@
 Plugin Name: Boise State OIT Help Desk Chat Scheduler
 Description: Allows Help Desk staff to defined the hours during which chat service is available. Directs users to either a Bomgar chat page or a "we're closed" message, based on that schedule.
 Plugin URI: https://github.com/OITWPsupport/boise-state-help-desk-chat-scheduler
-Version: 0.0.5
+Version: 0.0.6
 Author: David Lentz
 Author URI: https://webguide.boisestate.edu
 */
@@ -43,7 +43,8 @@ date_default_timezone_set('America/Boise');
 		$location = 'http://oit.boisestate.edu/chat-support-is-closed';
 	}
 
-	echo "<br />Redirecting you to $location";
+	// echo "<br />Redirecting you to $location";
+	header("Location: $location");
 }
 
 add_shortcode('boise_state_chat_schedule', 'boise_state_help_desk_chat_scheduler');
