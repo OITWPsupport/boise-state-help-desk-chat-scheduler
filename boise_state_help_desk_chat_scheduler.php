@@ -47,7 +47,7 @@ function boise_state_help_desk_chat_scheduler() {
 	// header("Location: $location");
 	// wp_redirect( $location );
 	// exit;
-	echo "<script language=\"javascript\">alert('$location');</script>";
+	echo "<script language=\"javascript\">window.location.replace('$location');</script>";
 }
 
 add_shortcode('boise_state_chat_schedule', 'boise_state_help_desk_chat_scheduler');
