@@ -23,7 +23,7 @@ $updater->initialize();
 
 function boise_state_help_desk_chat_scheduler() {
 
-date_default_timezone_set('America/Boise');
+	date_default_timezone_set('America/Boise');
 
 	$timeString = date("Hi");
 	$time = intval($timeString); // Cast that as an int (was a string)
@@ -44,7 +44,8 @@ date_default_timezone_set('America/Boise');
 	}
 
 	// echo "<br />Redirecting you to $location";
-	header("Location: $location");
+	// header("Location: $location");
+	echo "<script language=\"javascript\">window.location.replace(\"" . $location . "\");</script>";
 }
 
 add_shortcode('boise_state_chat_schedule', 'boise_state_help_desk_chat_scheduler');
